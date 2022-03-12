@@ -2,24 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { Route, Routes, BrowserRouter} from 'react-router-dom';
-import Todos from './pages/Todos';
-import TodoDetails from './pages/TodoDetails';
-import TodoCreate from './pages/TodoCreate';
+import App from './App';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/todos" element={<Todos/>}>
-          <Route path="/todos/:todoId" element={<TodoDetails />}/>
-          <Route path="/todos/create" element={<TodoCreate/>}/>
-        </Route>
-        <Route></Route>
-        <Route></Route>
-      </Routes>
-    </BrowserRouter>
+    <App></App>
   </React.StrictMode>,
   document.getElementById('root')
 );

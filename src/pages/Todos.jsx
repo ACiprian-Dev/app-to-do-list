@@ -1,11 +1,19 @@
 import React from 'react';
-import {Outlet} from 'react-router-dom';
+import TodoCard from '../components/TodoCard';
+import {Link} from 'react-router-dom';
 
-function Todos() {
+function Todos({todos}) {
     return (
         <div>
-            Todos Page
-            <Outlet></Outlet>
+            <ul>
+                {todos.map(({id, title, description}) => (
+                    <li key={id}>
+                        <TodoCard id={id} title={title} description={description} />
+                    </li>
+                ))
+                }
+            </ul>
+            <Link to="/todos/create">Create ToDo</Link>
         </div>
     )
 }
