@@ -1,8 +1,12 @@
 import React from 'react';
 import TodoCard from '../components/TodoCard';
 import {Link} from 'react-router-dom';
+import {useFetch} from '../hooks/useFetch';
 
 function Todos({todos}) {
+    const {data, error, isPending} = useFetch('/posts');
+    console.log(data, error, isPending);
+
     return (
         <div>
             <ul>
